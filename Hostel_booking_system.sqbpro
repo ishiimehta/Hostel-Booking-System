@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/mehta/OneDrive/Documents/Hostel_booking_system.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="2039"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,12:mainTransactions"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Booking" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="126"/><column index="2" value="124"/><column index="3" value="102"/><column index="4" value="152"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Hostel" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="159"/><column index="2" value="124"/><column index="3" value="186"/><column index="4" value="180"/><column index="5" value="121"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Payments" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="133"/><column index="2" value="124"/><column index="3" value="126"/><column index="4" value="175"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Room" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="102"/><column index="2" value="124"/><column index="3" value="97"/><column index="4" value="147"/><column index="5" value="134"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Student" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="124"/><column index="2" value="189"/><column index="3" value="86"/><column index="4" value="117"/><column index="5" value="236"/><column index="6" value="127"/><column index="7" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Transactions" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="162"/><column index="2" value="124"/><column index="3" value="126"/><column index="4" value="133"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">--There are six tables in the hostel booking database.
+
+--CREATION OF TABLES:
+
+CREATE TABLE Student(
+  Student_id INT(9) PRIMARY KEY,
+  Student_Name VARCHAR(30) NOT NULL,
+  Gender TEXT(2) NOT NULL,
+  Mobile_no INT(10) NOT NULL,
+  Student_father_name VARCHAR(30) NOT NULL,
+  Parents_no INT(10) NOT NULL,
+  Address VARCHAR(60)
+);
+INSERT INTO Student VALUES (199301033, 'Ryan Apple ', 'M', 9892655372,'Arnold Apple', 9833732829,'21 JUMP STREET, BLOCK 8 BROOKLYN');
+INSERT INTO Student VALUES (199301088, 'Amy Albert ', 'F', 9835291028,'Ansel Albert', 9636356493,'22 JUMP STREET, BLOCK 9 CALIFORNIA');
+INSERT INTO Student VALUES (199301083, 'Betty Berry ', 'F',9892203042 ,'Barstold Berry', 9833750704,'21 HIGH STREET, BLOCK 11 PHILADEPHIA');
+INSERT INTO Student VALUES (199302003, 'Rihanna Robinson', 'F', 9892611111,'Craig Robinson',  9833738090,'777 Brockton Avenue, Abington MA 2351');
+INSERT INTO Student VALUES (199302093, 'Elizabeth Banks ', 'M', 9892646899, 'Michael Banks', 9834444829,'30 Memorial Drive, Avon MA 2322');
+INSERT INTO Student VALUES (199304013, 'Tom Cruise ', 'M',9892651822, 'Danny Cruise',  9839374829,'250 Hartford Avenue, Bellingham MA 2019');
+INSERT INTO Student VALUES (199301090, 'Margot Robbie', 'F', 9892605872,'Paul Robbie',  9833732104,'700 Oak Street, Brockton MA 2301');
+INSERT INTO Student VALUES (199301067, 'Alexandra Daddario ', 'F', 7502655372,'Dwayne Daddario',  9838232829,'66-4 Parkhurst Rd, Chelmsford MA 1824');
+INSERT INTO Student VALUES (199301081, 'Jonah Hill ', 'M', 9892659872, 'Rex Hill', 9810732829, '591 Memorial Dr, Chicopee MA 1020');
+INSERT INTO Student VALUES (199302041, 'Megan Fox ', 'F', 9892255372, 'James fox', 9833732829, '55 Brooksby Village Way, Danvers MA 1923');
+INSERT INTO Student VALUES (199301055, 'Dave Franco ', 'M', 9892655332,'Seth Franco',  9833732359,'137 Teaticket Hwy, East Falmouth MA 2536');
+INSERT INTO Student VALUES (199301099, 'Zac Efron ', 'M', 9892544648, 'Adam Efron', 9817533743, '42 Fairhaven Commons Way, Fairhaven MA 2719');
+INSERT INTO Student VALUES (199303011, 'Emma Watson ', 'F', 9892655372, 'Drew Watson', 9836662823, '374 William S Canning Blvd, Fall River MA 272');
+INSERT INTO Student VALUES (199301066, 'Joey King ', 'M', 9899545451,'Zayn King',  9833254368, '121 Worcester Rd, Framingham MA 1701');
+INSERT INTO Student VALUES (199301038, 'Barbara Palvin ', 'F', 8510015150, 'Justin Palvin', 8510015159, '280 Washington Street, Hudson MA 1749');
+
+
+Select * from Student;
+
+CREATE TABLE Room (
+  Room_id INT(5) NOT NULL,
+  Student_id INT(9) NOT NULL,
+  capacity INT(1) NOT NULL,
+  Room_Status TEXT NOT NULL,
+  Room_price INT(6),
+  FOREIGN KEY(Student_id) REFERENCES Student(Student_id)
+  );
+
+INSERT INTO Room VALUES (10001,199301033, 2, 'full', 130055 );
+INSERT INTO Room VALUES (10002,199301088, 2, 'not_full', 130055);
+INSERT INTO Room VALUES (10003,199301083, 2, 'not_full',130055);
+INSERT INTO Room VALUES (10004,199302003, 2,'full', 130055 );
+INSERT INTO Room VALUES (10005,199302093, 2,'not_full', 130055 );
+INSERT INTO Room VALUES (10006,199304013, 2,'not_full',130055 );
+INSERT INTO Room VALUES (10008,199301090,2,'not_full', 130055);
+INSERT INTO Room VALUES (10009,199301067, 2, 'not_full',130055 );
+INSERT INTO Room VALUES (10010,199301081, 2, 'not_full',130055);
+INSERT INTO Room VALUES (10011,199302041, 2,'full',130055 );
+INSERT INTO Room VALUES (10012,199301066, 2,'not_full', 130055 );
+INSERT INTO Room VALUES (10013,199301038, 2,'not_full',130055 );
+INSERT INTO Room VALUES (10001,199301055, 2, 'full', 130055 );
+INSERT INTO Room VALUES (10004,199303011, 2,'full', 130055 );
+INSERT INTO Room VALUES (10011,199301099, 2,'full',130055  );
+
+SELECT * FROM Room ;
+
+
+CREATE TABLE Booking (
+  Booking_id INT(5) PRIMARY KEY,
+  Student_id INT(9) NOT NULL,
+  Room_id INT(5) NOT NULL,
+  Booking_date VARCHAR(15) NOT NULL
+  );
+
+INSERT INTO Booking VALUES (20001,199301033,10001,'12-03-2021');
+INSERT INTO Booking VALUES (20002,199301088,10002,'13-03-2021');
+INSERT INTO Booking VALUES (20003,199301083,10003,'14-03-2021');
+INSERT INTO Booking VALUES (20004,199302003,10004,'12-03-2021');
+INSERT INTO Booking VALUES (20005,199302093,10005,'13-03-2021');
+INSERT INTO Booking VALUES (20006,199304013,10006,'14-03-2021');
+INSERT INTO Booking VALUES (20007,199301090,10008,'12-03-2021');
+INSERT INTO Booking VALUES (20008,199301067,10009,'12-03-2021');
+INSERT INTO Booking VALUES (20009,199301081,10010,'12-03-2021');
+INSERT INTO Booking VALUES (20010,199302041,10011,'13-03-2021');
+INSERT INTO Booking VALUES (20011,199301055,10001,'14-03-2021');
+INSERT INTO Booking VALUES (20012,199301099,10011,'20-03-2021');
+INSERT INTO Booking VALUES (20013,199303011,10004,'14-03-2021');
+INSERT INTO Booking VALUES (20014,199301066,10012,'12-03-2021');
+INSERT INTO Booking VALUES (20015,199301038,10013,'13-03-2021');
+
+Select * from Booking;
+
+CREATE TABLE Hostel(
+Block_number VARCHAR(20),
+Student_id INT(9),
+Warden_name VARCHAR(50),
+Warden_contact INT(10),
+Location VARCHAR(45));
+
+INSERT INTO Hostel VALUES('G4',199301038,'Eva Smith',9899700897,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('B2',199301066,'Doris Wilson',9839048129,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('G1',199303011,'Wynona James',9891199234,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('B5',199301099,'Edna Francis',8809121183,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('G4',199301055,'Eva Smith',9899700897,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('B5',199302041,'Edna Francis',8809121183,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('G2',199301081,'Amy Smith',8399210032,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('B3',199301067,'Geraldine Carpenter',9800748122,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('G1',199301090,'Wynona James',9891199234,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('B7',199304013,'Doris Stuart',9899700227,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('B2',199302093,'Doris Wilson',9839048129,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('G1',199302003,'Wynona James',9891199234,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('B3',199301083,'Geraldine Carpenter',9800748122,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('B2',199301088,'Doris Wilson',9839048129,'Dehmi Kalan');
+INSERT INTO Hostel VALUES('G4',199301033,'Eva Smith',9899700897,'Dehmi Kalan');
+
+Select * from Hostel;
+
+CREATE TABLE Payments(
+Payment_id INT(5) PRIMARY KEY ,
+Student_id INT(9),
+Booking_id INT(7),
+Payment_status VARCHAR(10) );
+
+INSERT INTO Payments VALUES(30001,199301038,20015, 'SUCCESS');
+INSERT INTO Payments VALUES(30002,199301066,20014, 'SUCCESS');
+INSERT INTO Payments VALUES(30003,199303011,20013, 'SUCCESS');
+INSERT INTO Payments VALUES(30004,199301099,20012, 'SUCCESS');
+INSERT INTO Payments VALUES(30005,199301055,20011, 'SUCCESS');
+INSERT INTO Payments VALUES(30006,199302041,20010, 'SUCCESS');
+INSERT INTO Payments VALUES(30007,199301081,20009, 'SUCCESS');
+INSERT INTO Payments VALUES(30008,199301067,20008, 'SUCCESS');
+INSERT INTO Payments VALUES(30009,199301090,20007, 'SUCCESS');
+INSERT INTO Payments VALUES(30010,199304013,20006, 'SUCCESS');
+INSERT INTO Payments VALUES(30011,199302093,20005, 'SUCCESS');
+INSERT INTO Payments VALUES(30012,199302003,20004, 'SUCCESS');
+INSERT INTO Payments VALUES(30013,199301083,20003, 'SUCCESS');
+INSERT INTO Payments VALUES(30014,199301088,20002, 'SUCCESS');
+INSERT INTO Payments VALUES(30015,199301033,20001, 'SUCCESS');
+Select * from Payments;
+
+CREATE TABLE Transactions(
+Transaction_id VARCHAR(20) PRIMARY KEY,
+Student_id INT(9),
+Booking_id INT(5),
+Payment_id VARCHAR(20));
+
+INSERT INTO Transactions VALUES('TD10001',199301033,20001,30015);
+INSERT INTO Transactions VALUES('TD10002',199301088,20002,30014);
+INSERT INTO Transactions VALUES('TD10003',199301083,20003,30013);
+INSERT INTO Transactions VALUES('TD10004',199302003,20004,30012);
+INSERT INTO Transactions VALUES('TD10005',199302093,20005,30011);
+INSERT INTO Transactions VALUES('TD10006',199304013,20006,30010);
+INSERT INTO Transactions VALUES('TD10007',199301090,20007,30009);
+INSERT INTO Transactions VALUES('TD10008',199301067,20008,30008);
+INSERT INTO Transactions VALUES('TD10009',199301081,20009,30007);
+INSERT INTO Transactions VALUES('TD10010',199302041,20010,30006);
+INSERT INTO Transactions VALUES('TD10011',199301055,20011,30005);
+INSERT INTO Transactions VALUES('TD10012',199301099,20012,30004);
+INSERT INTO Transactions VALUES('TD10013',199303011,20013,30003);
+INSERT INTO Transactions VALUES('TD10014',199301066,20014,30002);
+INSERT INTO Transactions VALUES('TD10015',199301038,20015,30001);
+
+Select * from Transactions;
+
+
+
+
+--SAMPLE QUERIES:
+
+--1.Display Hostel Block number,Room_id and room status of student whose Student_id is 199301033.
+
+SELECT h.Block_number, r.Room_id, r.Room_Status
+FROM Hostel h INNER JOIN Room r
+ON h.Student_id=r.Student_id
+WHERE h.Student_id= 199301033;
+
+--2.Display the student name and payment id of all female students.
+
+SELECT s.Student_Name,s.Gender, p.Payment_id
+FROM Student s, Payments p
+WHERE s.Student_id= p.Student_id
+AND s.Gender= 'F';
+
+--3.Display student name, warden name and contact of those students whose rooms are fully occupied.
+
+SELECT s.Student_Name, h.Warden_name, h.Warden_contact, r.Room_Status
+FROM Student s, Hostel h, Room r
+WHERE s.Student_id=h.Student_id AND s.Student_id=r.Student_id
+AND r.Room_Status='full';
+
+--4.Display Transaction_id, Booking id, booking date and room price for students whose name starts wth 'R'.
+
+SELECT s.Student_Name,t.Transaction_id, t.Booking_id, b.Booking_date, r.Room_price
+FROM Student s, Transactions t,Booking b, Room r
+WHERE s.Student_id= t.Student_id  AND s.Student_id= b.Student_id AND s.Student_id=r.Student_id
+AND s.Student_Name like 'R%';
+
+--5.Display the Student_id, student name, father's name of those students who are sharing the same room.
+
+SELECT s.Student_id, s.Student_Name, s.Student_father_name, r.Room_id
+FROM Student s, Room r
+WHERE s.Student_id= r.Student_id  
+GROUP BY Room_id
+HAVING COUNT(Room_id)&gt;1;
+
+--6. Display the warden details for each hostel block.
+
+SELECT Block_number,Warden_name,Warden_contact
+FROM hostel h
+GROUP BY Block_number
+HAVING COUNT(Block_number)&gt;1;
+
+--7. Update the hostel location to 'Bagru' for hostel names starting with the letter 'G'.
+UPDATE Hostel
+SET Location='Bagru'
+WHERE Block_number LIKE 'G_');
+ 
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
